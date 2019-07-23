@@ -14,7 +14,6 @@ const partialsPath = path.join(__dirname, '../templates/partials');
 
 // erpress.static is used to render only static web pages.
 // to render dynamic page we should make use of handlebars(hbs).
-
 //set-up for hbs --> views and view engine
 app.set('views', viewsPath);
 app.set('view engine', 'hbs');
