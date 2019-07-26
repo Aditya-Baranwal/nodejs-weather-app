@@ -92,4 +92,4 @@ app.get('*', (request, response) => {
 
 //port
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log('Listening port 3000 --'));
+app.listen(port, () => console.log('Listening port '+ port +' --'));
