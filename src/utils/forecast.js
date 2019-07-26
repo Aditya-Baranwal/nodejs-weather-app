@@ -8,7 +8,9 @@ const requestWeather = (lat,long,location,callback) => {
         else {
             const apiData = JSON.parse(response.body);
             const temperature = ((apiData.currently.temperature-32)*0.55).toPrecision(4);
-            const weather = apiData.daily.data[0].summary+' It is currently '+temperature+' degree Celsius.'; 
+            const HighestTemp = ((apiData.daily.data[0].temperatureHigh-32)*0.55).toPrecision(4);
+            const LowestTemp = ((apiData.daily.data[0].temperatureLow-32)*0.55).toPrecision(4);
+            const weather = apiData.daily.data[0].summary+' It is currently '+temperature+' degree Celsius.\nHighest Temp : '+HighestTemp+'degree celsius\nLowest Temp : '+LowestTemp; 
             callback(undefined,{ weather : weather, temperature : temperature, location : location });
         }
     });
